@@ -21,7 +21,7 @@ def submit_loan():
 
     if not loan_amount or not interest_rate or not term or not start_date:
         return jsonify({"msg": "Missing required fields"}), 400
-    
+
     try:
         with db.session.begin():
             new_loan = LoanModel(
